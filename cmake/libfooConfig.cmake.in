@@ -9,3 +9,8 @@ if(NOT TARGET libfoo)
 endif()
 
 set(FOO_LIBRARIES foo)
+
+# The dependency on libpcap will be resolved as long as our FindPCAP.cmake
+# module is installed.
+include(CMakeFindDependencyMacro)
+find_dependency(PCAP)

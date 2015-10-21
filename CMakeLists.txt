@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.1)
+cmake_minimum_required(VERSION 2.8.8)
 project(libfoo)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules")
@@ -11,10 +11,7 @@ add_library(foo SHARED
    src/lib.h
 )
 
-#
-# !!! I believe this needs to change. !!!
-#
-target_link_libraries(foo ${PCAP_LIBRARY})
+target_link_libraries(foo ${PCAP_LIBRARIES})
 
 install(
    TARGETS foo
